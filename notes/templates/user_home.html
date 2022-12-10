@@ -2,5 +2,14 @@
 {%block title%}Home{%endblock%}
 
 {%block content%}
-User Home
+{%for job in jobs%}
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{job.title}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Posted By {{job.user.username}}</h6>
+      <p class="card-text">{{job.desc}}</p>
+    </div>
+  </div>
+  <br>
+{%endfor%}
 {%endblock%}
