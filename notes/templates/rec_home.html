@@ -4,6 +4,7 @@
 {% block content %}
 {%for job in user.jobs%}
 <div class="card" style="width: 18rem;">
+  <img src="/static/pics/{{job.img_path}}" class="card-img-top">
     <div class="card-body">
       <h5 class="card-title">{{job.title}}</h5>
       <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->

@@ -4,12 +4,17 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 
 
+UPLOAD_FOLDER = '/Users/ritikkarayat/Documents/TT/notes/static/pics/'
+
+
 db = SQLAlchemy()
 db_name='db'
 def create_app():
     app = Flask(__name__,instance_relative_config=True)
     app.config['SECRET_KEY'] = 'secret-key-goes-here'
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{db_name}'
+    app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
     db.init_app(app)
     from .models import User
     with app.app_context():
