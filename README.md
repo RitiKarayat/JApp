@@ -7,3 +7,12 @@ This is a very basic app which has the following features -
 
 This app has been solely made to demonstrate CRUD functionalities and an authentication layer. Hence it does not contain all the features expected out of a similar application.
 
+## Usage
+
+```sh
+git clone 
+cd Test
+python3 -m venv venv
+pip install -r requirements.txt
+python3 app.py
+```
