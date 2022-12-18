@@ -1,0 +1,48 @@
+{%extends "base.html"%}
+{%block title%}Home{%endblock%}
+
+{%block content%}
+{%if user.jobs_fav_id==None%}
+Add to Favourites
+{%else%}
+{%set jids = user.jobs_fav_id.split(' ') %}
+
+{%for job in jobs%}
+
+{%for jid in jids%}
+
+<!-- {%set id = jid|int%} -->
+{%if job.id==jid|int%}
+<div class="card" style="width: 18rem;">
+  <img src="/static/pics/{{job.img_path}}" class="card-img-top">
+    <div class="card-body">
+      <p hidden>{{job.id}}</p>
+      <h5 class="card-title">{{job.title}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Posted By {{job.user.username}}</h6>
+      <p class="card-text">{{job.desc}}</p>
+      <button id="{{job.id}}" class="btn btn-primary" onclick="fav({{ job.id | tojson }},{{user.id|tojson}})">Remove from Favourites</button>
+      
+      
+    </div>
+  </div>
+  <br>
+  <script>
+    function fav(job_id,user_id){
+      var tag = document.getElementById(job_id);
+      console.log(job_id,user_id);
+      
+      var xhr = new XMLHttpRequest();
+      url = 'http://127.0.0.1:5000/fav/'+String(user_id)+'/'+String(job_id)+'/remove'
+      xhr.open('post',url);
+      xhr.send();
+      
+      }
+      
+    
+  </script>
+
+{%endif%}
+{%endfor%}
+{%endfor%}
+{%endif%}
+{%endblock%}

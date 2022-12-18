@@ -10,6 +10,7 @@ class User(UserMixin, db.Model):
     password = db.Column(db.String(20), nullable=False)
     is_recruiter = db.Column(db.Boolean,default=False,nullable=False)
     jobs = db.relationship('Job',backref='user',lazy=True)
+    jobs_fav_id = db.Column(db.String(20))
 
     def __repr__(self):
         return '<User %r>' % self.username
