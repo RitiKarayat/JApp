@@ -10,9 +10,10 @@ This app has been solely made to demonstrate CRUD functionalities and an authent
 ## Usage
 
 ```sh
-git clone 
-cd Test
+git clone https://github.com/RitiKarayat/JApp.git
+cd JApp
 python3 -m venv venv
 pip install -r requirements.txt
 python3 app.py
 ```
+Now visit <http://127.0.0.1:5000> and the app will be running there.
