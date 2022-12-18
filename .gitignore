@@ -1,1 +1,4 @@
-api/
+venv/
+notes/static/pics/
+!notes/static/pics/.gitkeep
+instance/

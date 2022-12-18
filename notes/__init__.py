@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 
 
-UPLOAD_FOLDER = '/Users/ritikkarayat/Documents/TT/notes/static/pics/'
+UPLOAD_FOLDER = os.getcwd()+'/notes/static/pics/'
 
 
 db = SQLAlchemy()
