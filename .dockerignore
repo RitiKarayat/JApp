@@ -1,0 +1,6 @@
+venv/
+notes/static/pics/
+!notes/static/pics/.gitkeep
+instance/
+Dockerfile
+docker-compose.yaml
