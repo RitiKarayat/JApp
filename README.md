@@ -16,4 +16,11 @@ python3 -m venv venv
 pip install -r requirements.txt
 python3 app.py
 ```
+
+### With Docker
+
+```sh
+docker-compose up
+```
+
 Now visit <http://127.0.0.1:5000> and the app will be running there.
